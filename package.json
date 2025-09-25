@@ -3,17 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "android-build-prod": "cd android && ./gradlew assembleRelease",
+    "android-build-dev": "cd android && ./gradlew assembleDebug",
+    "android-emulator": "/Users/kimdong-uk/Library/Android/sdk/emulator/emulator @my",
     "android": "react-native run-android",
+    "ios-build-dev": "cd ios && xcodebuild -workspace ourkitchen.xcworkspace -scheme ourkitchen -configuration Debug -sdk iphonesimulator -derivedDataPath build CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO",
+    "ios-build-prod": "cd ios && xcodebuild -workspace ourkitchen.xcworkspace -scheme ourkitchen -configuration Release -destination generic/platform=iOS archive -archivePath build/ourkitchen.xcarchive",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
+    "@react-native/new-app-screen": "0.81.4",
     "react": "19.1.0",
     "react-native": "0.81.4",
-    "@react-native/new-app-screen": "0.81.4",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-webview": "^13.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
